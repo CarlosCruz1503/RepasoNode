@@ -13,7 +13,8 @@ const userModel = new mongoose.Schema({
         unique: true
     },
     age: {
-        type: Number
+        type: Number,
+        default: 18
     }
 })
 
