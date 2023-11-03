@@ -7,6 +7,13 @@ const userModel = new mongoose.Schema({
     },
     last_name: {
         type: String,
+    },
+    email: {
+        type: String,
+        unique: true
+    },
+    age: {
+        type: Number
     }
 })
 
