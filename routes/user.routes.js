@@ -44,4 +44,19 @@ userRouter.delete("/delete/:_id", async (req, res) => {
     }
 })
 
+userRouter.delete("/deleteByName/:name", async (req, res) => {
+    try {
+        let nameForDelete = req.params.name
+        let userDelete = await usersModel.findOneAndDelete({ name: nameForDelete })
+        if (userDelete) {
+            return res.json({ msg: "Eliminado Correctamente" })
+        } else {
+            return res.json({ msg: "No elimine nada" })
+        }
+
+    } catch (e) {
+        return res.json({ error: e })
+    }
+})
+
 export default userRouter

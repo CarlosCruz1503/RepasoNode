@@ -1,7 +1,7 @@
 import mongoose from "mongoose";
 
 const connectMoongo = async () => {
-    await mongoose.connect("mongodb+srv://carlosjose445566:VBy7nB9dwhc3IJUb@repasonode.vamy0dg.mongodb.net/repasoNode?retryWrites=true&w=majority", {})
+    await mongoose.connect(process.env.DATABASE_URL, {})
     try {
         console.log("Conectado exitosamente")
     } catch (err) {
